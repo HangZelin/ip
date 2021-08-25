@@ -1,7 +1,9 @@
 /**
  * @author Hang Zelin
+ *
  * @description Programme that allows Duke to save any changes after execution and read data when it is initially invoked.
  * In other words, programme allows Duke to save and read data from a file.
+ *
  */
 
 package Duke.SaveLoadManager;
@@ -10,7 +12,6 @@ import Duke.Command.Parser;
 import Duke.Excpetions.DukeException;
 import Duke.Task.Task;
 import Duke.Task.TaskList;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -42,7 +43,7 @@ public class Storage {
     public ArrayList<Task> load() throws DukeException {
         try {
             ReadDataFromFile();
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e){
             throw new DukeException("Cannot Read From Data.");
         }
 
@@ -84,7 +85,7 @@ public class Storage {
     public void SaveListDataToFile(TaskList Tasks) throws IOException {
         FileWriter fw = new FileWriter(filePath);
         for (int i = 0; i < Tasks.size(); i++) {
-            fw.write(Tasks.get(i).getSaveDataInfo() + "\n");
+            fw.write( Tasks.get(i).getSaveDataInfo()+ "\n");
         }
         fw.close();
     }

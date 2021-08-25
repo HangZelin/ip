@@ -1,10 +1,12 @@
 /**
  * @author Hang Zelin
+ *
  * @description ToDos class that extends Task class. It is one of the types in 3 tasks.
+ *
  */
 package Duke.Task;
 
-public class ToDos extends Task {
+public class ToDos extends Task{
 
     private boolean done = false;
     private String task = "";
@@ -24,7 +26,7 @@ public class ToDos extends Task {
             done_str = "X";
         }
 
-        return "[" + taskType + "]" + "[" + done_str + "] " + task;
+        return "[" + taskType + "]" + "[" + done_str + "] "  + task;
     }
 
     @Override
@@ -44,6 +46,6 @@ public class ToDos extends Task {
 
     @Override
     public String getSaveDataInfo() {
-        return this.taskType + " | " + (this.done ? 1 : 0) + " | " + task;
+        return this.taskType + " | " + (this.done? 1 : 0) + " | " + task;
     }
 }
